@@ -1,8 +1,8 @@
 const sections = [
-  { title: "Info", description: "Aqui puedes encontrar informacion sobre la escuela", link: "/docs/info.html" },
-  { title: "Horarios", description: "Aqui puedes consultar los horarios de clases", link: "/docs/horario.html" },
-  { title: "Mapa", description: "Aqui puedes consultar las ubicaciones de la escuela", link: "/docs/mapa.html" },
-  { title: "Preguntas Frecuentes", description: "Aqui encontraras dudas comunes sobre la escuela", link: "/docs/p_frecuentes.html" }
+  { title: "Info", description: "Aqui puedes encontrar informacion sobre la escuela", link: "docs/info.html" },
+  { title: "Horarios", description: "Aqui puedes consultar los horarios de clases", link: "docs/horario.html" },
+  { title: "Mapa", description: "Aqui puedes consultar las ubicaciones de la escuela", link: "docs/mapa.html" },
+  { title: "Preguntas Frecuentes", description: "Aqui encontraras dudas comunes sobre la escuela", link: "docs/p_frecuentes.html" }
 ];
 
 let current = 0;
