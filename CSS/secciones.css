@@ -1,0 +1,163 @@
+body {
+  background: #101010;
+  color: #fff;
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+/* secciones.css - SOLO estilos para la sección info */
+.info-section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  position: relative;
+  z-index: 1;
+  margin-top: 8vh;
+  font-family: '', monospace;
+}
+
+.info-section-box {
+  background: rgba(16, 16, 16, 0.95);
+  border: 3px solid #00eaff;
+  border-radius: 18px;
+  box-shadow: 0 0 24px #00eaff44;
+  padding: 40px 60px;
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 600px;
+  width: 100%;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.info-section-box h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0 0 18px 0;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.info-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.info-faq-card {
+  background: rgba(20, 20, 20, 0.95);
+  border: 2px solid #00eaff;
+  border-radius: 14px;
+  box-shadow: 0 0 12px #00eaff33;
+  padding: 20px 28px;
+  width: 100%;
+  max-width: 500px;
+  color: #fff;
+  text-align: center;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.info-faq-title {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #00eaff;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.2s;
+  margin-bottom: 8px;
+}
+
+.info-faq-title.active {
+  color: #fff;
+}
+
+.info-faq-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s;
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 0;
+  padding-left: 0;
+  text-align: center;
+}
+
+.info-faq-content.open {
+  max-height: 200px;
+  opacity: 1;
+  margin-bottom: 10px;
+  padding-left: 0;
+}
+
+/* Fondo de partículas animadas solo para info */
+.info-stars {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.info-star {
+  position: absolute;
+  background: #00eaff;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: info-twinkle 2.5s infinite alternate, info-moveStar 8s linear infinite;
+}
+
+@keyframes info-twinkle {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+@keyframes info-moveStar {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(40px); }
+}
+
+@media (max-width: 700px) {
+  .info-section-box {
+    padding: 24px 10px;
+    font-size: 1rem;
+    max-width: 95vw;
+  }
+  .info-faq-card {
+    max-width: 95vw;
+  }
+}
+/* Botón Home flotante para info */
+.info-home-btn {
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  z-index: 10;
+  background: rgba(16,16,16,0.7);
+  border: 2px solid #00eaff;
+  border-radius: 50%;
+  padding: 8px;
+  box-shadow: 0 0 12px #00eaff55;
+  transition: background 0.2s, box-shadow 0.2s, border-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.info-home-btn:hover, .info-home-btn:focus {
+  background: #00eaff22;
+  box-shadow: 0 0 24px #00eaff99;
+  border-color: #fff;
+}
+.info-home-btn svg {
+  display: block;
+}
