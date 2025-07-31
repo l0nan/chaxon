@@ -1,11 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Info - Escuela</title>
+  <link rel="stylesheet" href="../css/secciones.css">
 </head>
 <body>
-  
+  <div class="info-stars"></div>
+  <a id="homeBtn" class="info-home-btn" title="Volver al inicio">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+      <path d="M3 11L12 4L21 11" stroke="#00eaff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M5 10V20H19V10" stroke="#00eaff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="9" y="14" width="6" height="6" fill="none" stroke="#00eaff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+  <div class="info-section-container">
+    <div class="info-section-box">
+      <h2>Información de la Escuela</h2>
+      <div class="info-faq-list">
+        <div class="info-faq-card">
+          <button class="info-faq-title">¿Cómo inscribirse?</button>
+          <div class="info-faq-content">
+            Para inscribirte debes completar el formulario de inscripción disponible en la secretaría o en la web, y presentar la documentación requerida.
+          </div>
+        </div>
+        <div class="info-faq-card">
+          <button class="info-faq-title">¿Cuál es el título que otorga la escuela?</button>
+          <div class="info-faq-content">
+            Al finalizar los estudios, obtendrás el título oficial de Técnico en Informática Profesional y Personal.
+          </div>
+        </div>
+        <div class="info-faq-card">
+          <button class="info-faq-title">¿Dónde está ubicada la escuela?</button>
+          <div class="info-faq-content">
+            Nuestra escuela se encuentra en Calle Ficticia 123, Ciudad Ejemplo, Provincia.
+          </div>
+        </div>
+        <div class="info-faq-card">
+          <button class="info-faq-title">¿Cuáles son los horarios de atención?</button>
+          <div class="info-faq-content">
+            Lunes a viernes de 8:00 a 18:00 hs.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/script-main.js"></script>
+  <script>
+  // Botón home para volver al index directamente
+  document.getElementById('homeBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.location.href = '../index.html';
+  });
+
+  // Partículas animadas
+  const starsContainer = document.querySelector('.info-stars');
+  for(let i=0; i<100; i++) {
+    const star = document.createElement('div');
+    star.className = 'info-star';
+    const size = Math.random() * 3 + 1;
+    star.style.width = `${size}px`;
+    star.style.height = `${size}px`;
+    star.style.top = `${Math.random() * 100}vh`;
+    star.style.left = `${Math.random() * 100}vw`;
+    star.style.animationDuration = `${2 + Math.random() * 2}s, ${6 + Math.random() * 6}s`;
+    starsContainer.appendChild(star);
+  }
+  // Acordeón FAQ
+  document.querySelectorAll('.info-faq-title').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const content = this.nextElementSibling;
+      content.classList.toggle('open');
+      this.classList.toggle('active');
+    });
+  });
+</script>
 </body>
 </html>
