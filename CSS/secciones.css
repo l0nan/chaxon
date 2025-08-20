@@ -161,3 +161,25 @@ body {
 .info-home-btn svg {
   display: block;
 }
+
+.escuela {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  padding: 0;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.copy {
+  bottom: 10px;
+  font-size: 15px;
+  margin: 0;
+}
