@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Primer Grado - Horarios</title>
+  <link rel="stylesheet" href="../CSS/secciones.css" />
+  <style>
+    .imagen-expandida-bg {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(16,16,16,0.85);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .imagen-expandida-bg.active {
+      display: flex;
+    }
+    .imagen-expandida-img {
+      max-width: 90vw;
+      max-height: 85vh;
+      border-radius: 16px;
+      box-shadow: 0 0 32px #00eaff99;
+      border: 3px solid #00eaff;
+      background: #101010;
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="horario-section-container">
+    <div class="horario-section-box">
+      <h1>Horarios de 1° grado</h1>
+      <p class="horario-desc">Selecciona una división para ver el horario:</p>
+      <div class="divisiones-imagenes">
+        <div class="division-card">
+          <h2>1°A</h2>
+          <img src="../source/Horarios/1°1.png" alt="Horario 1°A" class="expandible" />
+        </div>
+        <div class="division-card">
+          <h2>1°B</h2>
+          <img src="../source/Horarios/1°1.png" alt="Horario 1°B" class="expandible" />
+        </div>
+        <div class="division-card">
+          <h2>1°C</h2>
+          <img src="../source/Horarios/1°1.png" alt="Horario 1°C" class="expandible" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="imagenExpandidaBg" class="imagen-expandida-bg">
+    <img id="imagenExpandidaImg" class="imagen-expandida-img" src="" alt="Horario expandido" />
+  </div>
+  <script>
+    // Expande la imagen al hacer clic
+    document.querySelectorAll('.expandible').forEach(img => {
+      img.addEventListener('click', function() {
+        document.getElementById('imagenExpandidaImg').src = this.src;
+        document.getElementById('imagenExpandidaBg').classList.add('active');
+      });
+    });
+    // Cierra la imagen al hacer clic fuera de ella
+    document.getElementById('imagenExpandidaBg').addEventListener('click', function(e) {
+      if (e.target === this) {
+        this.classList.remove('active');
+        document.getElementById('imagenExpandidaImg').src = '';
+      }
+    });
+  </script>
+</body>
+</html>
