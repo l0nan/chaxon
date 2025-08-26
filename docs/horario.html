@@ -2,34 +2,18 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Nombre de la sección</title>
+  <title>Horarios por grado</title>
   <link rel="stylesheet" href="../CSS/secciones.css" />
 </head>
 <body>
-  <a id="homeBtn" class="info-home-btn" title="Volver al inicio">
-    <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-      <path d="M3 11L12 4L21 11" stroke="#00eaff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M5 10V20H19V10" stroke="#00eaff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      <rect x="9" y="14" width="6" height="6" fill="none" stroke="#00eaff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </a>
-  <canvas id="particles-canvas"></canvas>
-
-  <header class="header">
-    <a href="index.html" class="back-link">⟵ Volver al inicio</a>
-    <h1 class="section-title">Nombre de la sección</h1>
-  </header>
-
-  <main class="section-content">
-    <p>Este espacio está listo para que desarrolles tu contenido con libertad y estilo.</p>
-  </main>
-
-  <script src="particles.js">
-    // Botón home para volver al index directamente
-  document.getElementById('homeBtn').addEventListener('click', function(e) {
-    e.preventDefault();
-    window.location.href = '../index.html';
-  });
-  </script>
+  <h1>Horarios por grado</h1>
+  <div class="grados-botones">
+    <button onclick="location.href='1.html'">1°</button>
+    <button onclick="location.href='2.html'">2°</button>
+    <button onclick="location.href='3.html'">3°</button>
+    <button onclick="location.href='4.html'">4°</button>
+    <button onclick="location.href='5.html'">5°</button>
+    <button onclick="location.href='6.html'">6°</button>
+  </div>
 </body>
 </html>
